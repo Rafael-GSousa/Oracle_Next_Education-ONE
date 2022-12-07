@@ -8,8 +8,8 @@
 
     var x = 300;
     var y = 200;
-    var raio = 20;
-    var variacao = 1;
+    var raio = 19;
+    var variacao = 0;
 
 
     function desenhaCirculo(x, y, raio){
@@ -29,8 +29,9 @@
         }else if(raio < 20){
             variacao = 1;
         }
-        desenhaCirculo(x, y, raio);
         raio += variacao;
+        desenhaCirculo(x, y, raio);
+        
 
     }
 
