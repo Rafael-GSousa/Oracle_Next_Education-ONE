@@ -1,6 +1,8 @@
 <canvas width="600" height="400"></canvas>
-
+<br>
+Escolha uma cor <input type="color">
 <script>
+    var paletaCores = document.querySelector('input');
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
     pincel.fillStyle = 'grey';
@@ -25,7 +27,7 @@
             else if(evento.altKey && raio - 5 >= 10){
                 raio -= 5;
             }
-            pincel.fillStyle = cores[indiceCorAtual];
+            pincel.fillStyle = paletaCores;//cores[indiceCorAtual];
             pincel.beginPath();
             pincel.arc(x, y, raio, 0, 2 * 3.14);
             pincel.fill();
@@ -57,6 +59,6 @@
         return false;
     }
 
-    tela.oncontextmenu = mudaCor;
+    //tela.oncontextmenu = mudaCor;
 
 </script>
