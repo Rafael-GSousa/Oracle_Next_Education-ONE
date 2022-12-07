@@ -34,15 +34,15 @@
     }
     var desenha = false;
 
-    function habilitaDesenha(){
+    
+
+    tela.onmousemove = desenhaCirculo;
+    tela.onmousedown = function() {
         desenha = true;
     }
-    function desabilitaDesenha(){
+    tela.onmouseup =     function() {
         desenha = false;
     }
-    tela.onmousemove = desenhaCirculo;
-    tela.onmousedown = habilitaDesenha;
-    tela.onmouseup = desabilitaDesenha;
 
     while(desenha == true){
         desenhaCirculo();
