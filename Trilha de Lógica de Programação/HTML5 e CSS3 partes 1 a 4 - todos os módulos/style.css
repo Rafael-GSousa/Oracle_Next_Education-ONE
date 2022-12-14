@@ -1,3 +1,7 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+/* CSS do cabeçalho de todas as páginas */
 header {
     background: #BBBBBB;
     padding: 20px 0;
@@ -18,8 +22,6 @@ nav{
 nav li {
     display: inline;
     margin: 0 0 0 15px;
-
-
 }
 
 nav a {
@@ -36,6 +38,7 @@ nav a:hover{
 
 }
 
+/* CSS da página de produtos (produtos.html) */
 .produtos {
     width: 940px;
     margin: 0 auto;
@@ -81,6 +84,7 @@ nav a:hover{
     margin-top: 10px;
 }
 
+/* CSS do rodapé de todas as páginas */
 footer {
     text-align: center;
     background: url("bg.jpg");
@@ -93,6 +97,7 @@ footer {
     margin-top: 20px;
 }
 
+/* CSS da página de contato (contato.html) */
 main {
     width: 940px;
     margin: 0 auto;
@@ -151,4 +156,47 @@ thead {
 td, th {
     border: 1px solid #000000;
     padding: 8px 15px;
+}
+
+/* CSS da página inicial (index.html) */
+.banner {
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.utensilios {
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.imagembeneficios {
+    width: 60%;
+}
+
+.mapa {
+    padding: 3em 0;
+}
+
+.mapa p {
+    margin-bottom: 2em;
+    text-align: center;
 }
