@@ -1,5 +1,4 @@
 function pulaLinha() {
-
     document.write("<br>");
 }
 
