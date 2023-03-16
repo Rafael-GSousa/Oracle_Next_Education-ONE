@@ -1,0 +1,19 @@
+#ultimo__link {
+    margin-right: 0;
+}
+
+.menu__link {
+    text-decoration: none;
+    margin-right: 1.25rem;
+    color: #808080;
+    text-transform: lowercase;
+}
+
+.menu__link.ativo {
+    color: #333333;
+    font-weight: bold;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
