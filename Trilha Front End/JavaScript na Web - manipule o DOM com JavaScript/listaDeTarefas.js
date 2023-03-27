@@ -12,7 +12,7 @@ const criarTarefa = (evento) => { //função de adicionar um elemento na lista a
 
     tarefa.innerHTML = conteudo; //adicionando o parágrafo criado na tag <li> criada
 
-    tarefa.appendChild(BotaoConclui());
+    tarefa.appendChild(botaoConclui());
     lista.appendChild(tarefa); //adicionando o elemento filho (tag <li>) com o parágrafo dentro do elemento pai (tag <ul>) 
     input.value = " "; //limpa o input
 }
@@ -22,14 +22,25 @@ const novaTarefa = document.querySelector('[data-form-button]'); //acessando o b
 novaTarefa.addEventListener('click', criarTarefa); //chama o evento criar tarefa ao clicar no botão do input
 
 
-const BotaoConclui = () => {
+const botaoConclui = () => {
     const botaoConclui = document.createElement('button'); //cria o botão
 
     botaoConclui.classList.add('check-button');
     botaoConclui.innerText = "concluir";
-    botaoConclui.addEventListener('click', () => { //evento de click do botão
-        console.log('fui clicado');
-    });
+    botaoConclui.addEventListener('click', concluirTarefa); //evento de click do botão
+
 
     return botaoConclui;
+}
+
+
+
+
+const concluirTarefa = (evento) => {
+    const botaoConclui = evento.target;
+
+    const tarefaCompleta = botaoConclui.parentElement;
+
+    tarefaCompleta.classList.toggle('done');
+
 }
