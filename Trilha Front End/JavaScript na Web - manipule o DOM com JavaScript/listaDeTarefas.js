@@ -1,5 +1,5 @@
 (() => {/*todas as funções estão dentro de uma função anônima e não mais como global, isso impede acesso a 
-    elas pelo console do browser*/
+    elas pelo console do browser. Ou seja, o JavaScript foi encapsulado*/
 
     const criarTarefa = (evento) => { //função de adicionar um elemento na lista ao clicar no botão do input
 
