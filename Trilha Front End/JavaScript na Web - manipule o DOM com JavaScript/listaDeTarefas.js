@@ -15,7 +15,8 @@
 
         tarefa.innerHTML = conteudo; //adicionando o parágrafo criado na tag <li> criada
 
-        tarefa.appendChild(botaoConclui());
+        tarefa.appendChild(BotaoConclui());
+        tarefa.appendChild(BotaoDeleta());
         lista.appendChild(tarefa); //adicionando o elemento filho (tag <li>) com o parágrafo dentro do elemento pai (tag <ul>) 
         input.value = " "; //limpa o input
     }
@@ -25,7 +26,7 @@
     novaTarefa.addEventListener('click', criarTarefa); //chama o evento criar tarefa ao clicar no botão do input
 
 
-    const botaoConclui = () => {
+    const BotaoConclui = () => {//criado como componente, por isso começa com maíuscula
         const botaoConclui = document.createElement('button'); //cria o botão
 
         botaoConclui.classList.add('check-button');
@@ -37,14 +38,29 @@
     }
 
 
-
-
     const concluirTarefa = (evento) => {
         const botaoConclui = evento.target;
 
         const tarefaCompleta = botaoConclui.parentElement;
 
         tarefaCompleta.classList.toggle('done');
+    }
 
+    const BotaoDeleta = () => {
+        const botaoDeleta = document.createElement('button');
+
+        botaoDeleta.innerText = 'deletar';
+        botaoDeleta.addEventListener('click', deletarTarefa)
+        return botaoDeleta;
+    }
+
+    const deletarTarefa = (evento) => {
+        const botaoDeleta = evento.target;
+        
+        const tarefaCompleta = botaoDeleta.parentElement;
+
+        tarefaCompleta.remove();
+
+        return botaoDeleta;
     }
 })()
