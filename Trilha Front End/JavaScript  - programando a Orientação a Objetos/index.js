@@ -6,16 +6,28 @@ class Cliente {
 
 class ContaCorrente {
     agencia;
-    saldo;
+    // proposta para atributos privados (ainda não é oficial)
+    // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields
+    // oficialmente deve ser colocado um underline antes do atributo para identificar que é privado(apesar de na prática não ficar privado)
+    _saldo = 0;
 
     // método sacar foi adicionado dentro da classe ContaCorrente
     // o "this" define que a conta corrente a ser tratada é a que estiver em uso  no momento 
     sacar(valor) {
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
+        if (this._saldo >= valor) {
+            this._saldo -= valor;
             console.log('Você retirou R$ ' + valor);
         }else{
             console.log('Valor solicitado é maior que o disponível. Saque não processado!');
+        }
+    }
+
+    depositar(valor) {
+        if(valor > 0){
+            this._saldo += valor;
+            console.log('Você depositou R$' + valor);
+        }else{
+            console.log('Não é possível depositar valor negativo ou igual a zero.');
         }
     }
 }
@@ -31,20 +43,17 @@ cliente2.nome = 'Alice';
 cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo = 0;
+contaCorrenteRicardo._saldo = 0;
 contaCorrenteRicardo.agencia = 1001;
 
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.saldo = 100;
-console.log(contaCorrenteRicardo.saldo);
+contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.sacar(50);
-console.log(contaCorrenteRicardo.saldo);
-
+console.log(contaCorrenteRicardo);
 
 const contaCorrenteAlice = new ContaCorrente();
 contaCorrenteAlice.saldo = 0;
 contaCorrenteAlice.agencia = 1001;
 
 // imprimindo os objetos com seus atributos no PowerShell utilizando NodeJS
-console.log(cliente1);
-console.log(cliente2);
+// console.log(cliente1);
+// console.log(cliente2);
