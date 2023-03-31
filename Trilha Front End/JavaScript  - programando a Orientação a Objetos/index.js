@@ -17,18 +17,20 @@ class ContaCorrente {
         if (this._saldo >= valor) {
             this._saldo -= valor;
             console.log('Você retirou R$ ' + valor);
-        }else{
+            return valor;
+        } else {
             console.log('Valor solicitado é maior que o disponível. Saque não processado!');
         }
+
     }
 
     depositar(valor) {
-        if(valor > 0){
-            this._saldo += valor;
-            console.log('Você depositou R$' + valor);
-        }else{
+        if (valor <= 0) {
             console.log('Não é possível depositar valor negativo ou igual a zero.');
         }
+        this._saldo += valor;
+        console.log('Você depositou R$' + valor);
+
     }
 }
 
@@ -43,16 +45,18 @@ cliente2.nome = 'Alice';
 cliente2.cpf = 88822233309;
 
 const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo._saldo = 0;
 contaCorrenteRicardo.agencia = 1001;
 
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50);
-console.log(contaCorrenteRicardo);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
 
-const contaCorrenteAlice = new ContaCorrente();
-contaCorrenteAlice.saldo = 0;
-contaCorrenteAlice.agencia = 1001;
+const valorSacado = contaCorrenteRicardo.sacar(50);
+console.log(valorSacado);
+
+// const contaCorrenteAlice = new ContaCorrente();
+// contaCorrenteAlice.saldo = 0;
+// contaCorrenteAlice.agencia = 1001;
 
 // imprimindo os objetos com seus atributos no PowerShell utilizando NodeJS
 // console.log(cliente1);
