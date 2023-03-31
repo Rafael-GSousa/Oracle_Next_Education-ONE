@@ -1,4 +1,4 @@
-const cpf = document.getElementById('cpf')
+const cpf = document.getElementById('[data-tipo="cpf"]')
 
 cpf.addEventListener('keypress', () => {
     let cpfTamanho = cpf.value.length
