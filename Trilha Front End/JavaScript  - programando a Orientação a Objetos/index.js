@@ -14,6 +14,7 @@ class ContaCorrente {
     // método sacar foi adicionado dentro da classe ContaCorrente
     // o "this" define que a conta corrente a ser tratada é a que estiver em uso  no momento 
     sacar(valor) {
+// método com retorno
         if (this._saldo >= valor) {
             this._saldo -= valor;
             console.log('Você retirou R$ ' + valor);
@@ -25,8 +26,10 @@ class ContaCorrente {
     }
 
     depositar(valor) {
+        // early return
         if (valor <= 0) {
             console.log('Não é possível depositar valor negativo ou igual a zero.');
+            return;
         }
         this._saldo += valor;
         console.log('Você depositou R$' + valor);
@@ -49,7 +52,7 @@ contaCorrenteRicardo.agencia = 1001;
 
 contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(-100);
 
 const valorSacado = contaCorrenteRicardo.sacar(50);
 console.log(valorSacado);
