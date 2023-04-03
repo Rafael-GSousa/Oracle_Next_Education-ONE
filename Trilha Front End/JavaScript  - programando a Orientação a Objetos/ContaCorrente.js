@@ -35,5 +35,7 @@ export class ContaCorrente {
     transferir(valor, conta){
         const valorSacado = this.sacar(valor);
         conta.depositar(valorSacado);
+        conta.cidade = 'São Paulo';
+        valor = 20;
     }
 }
