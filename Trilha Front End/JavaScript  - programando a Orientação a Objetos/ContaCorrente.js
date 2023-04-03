@@ -1,5 +1,7 @@
 export class ContaCorrente {
     agencia;
+    cliente;
+
     // proposta para atributos privados (ainda não é oficial)
     // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields
     // oficialmente deve ser colocado um underline antes do atributo para identificar que é privado(apesar de na prática não ficar privado)
@@ -28,5 +30,10 @@ export class ContaCorrente {
         this._saldo += valor;
         console.log('Você depositou R$' + valor);
 
+    }
+
+    transferir(valor, conta){
+        const valorSacado = this.sacar(valor);
+        conta.depositar(valorSacado);
     }
 }
