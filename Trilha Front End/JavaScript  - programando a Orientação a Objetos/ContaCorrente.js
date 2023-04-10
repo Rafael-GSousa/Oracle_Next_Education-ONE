@@ -1,11 +1,26 @@
+import { Cliente } from "./Cliente.js";
+
 export class ContaCorrente {
     agencia;
-    cliente;
+    _cliente;
 
+    set cliente(novoValor){
+        if(novoValor instanceof Cliente){
+            this._cliente = novoValor;
+        }
+    }
+
+    get cliente(){
+        return this._cliente;
+    }
     // proposta para atributos privados (ainda não é oficial)
     // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields
     // oficialmente deve ser colocado um underline antes do atributo para identificar que é privado(apesar de na prática não ficar privado)
     _saldo = 0;
+
+    get saldo(){
+        return this._saldo;
+    }
 
     // método sacar foi adicionado dentro da classe ContaCorrente
     // o "this" define que a conta corrente a ser tratada é a que estiver em uso  no momento 

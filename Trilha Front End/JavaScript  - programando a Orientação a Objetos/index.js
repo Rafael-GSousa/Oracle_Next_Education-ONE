@@ -21,16 +21,14 @@ contaCorrenteRicardo.depositar(500);
 // console.log(contaCorrenteRicardo);
 
 const conta2 = new ContaCorrente();
-conta2.cliente = new Cliente();
-conta2.cliente.nome = 'Alice';
-conta2.cliente.cpf = 88822233309;
+conta2.cliente = cliente1;
 conta2.agencia = 102;
 
 let valor = 200;
 contaCorrenteRicardo.transferir(valor, conta2);
 
-console.log('valor: ', valor);
-console.log(conta2);
+conta2.saldo = 30000;
+console.log(conta2.saldo);
 
 // const contaCorrenteAlice = new ContaCorrente();
 // contaCorrenteAlice.saldo = 0;
